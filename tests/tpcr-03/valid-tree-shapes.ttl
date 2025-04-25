@@ -1,0 +1,8 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Collection1 a tree:Collection ; tree:shape [], [a sh:NodeShape], ex:NodeShape1 .
+
+ex:NodeShape1 a ex:Something .

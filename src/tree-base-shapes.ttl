@@ -1,0 +1,142 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+tree: owl:imports <https://w3id.org/tree/> .
+
+tree:CollectionShape a sh:NodeShape;
+	rdfs:label "Collection shape"@en ;
+	rdfs:comment "A shape describing well-formed TREE collections."@en ;
+  sh:targetClass tree:Collection;
+  sh:property tree:CollectionMemberSuggestedShape, tree:CollectionMemberNodeKindShape, 
+              tree:CollectionShapeSuggestedShape, tree:CollectionShapeLimitedShape, tree:CollectionShapeNodeKindShape .
+
+tree:CollectionMemberSuggestedShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:minCount 1;
+  sh:name "Tree member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:severity sh:Info;
+  sh:message "TPCR-01 (tree:member usage) - a collection MUST refer using its tree:member property to a member's focus node for all (zero or more) members available in the page" .
+
+tree:CollectionMemberNodeKindShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:nodeKind sh:BlankNodeOrIRI;
+  sh:name "Tree member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:message "TPCR-01 (tree:member usage) - a collection MUST refer using its tree:member property to a member's focus node for all (zero or more) members available in the page" .
+
+tree:CollectionShapeSuggestedShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:minCount 1;
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:severity sh:Info;
+  sh:message "TPCR-03 (tree:shape usage) - a collection MAY refer using its tree:shape property to one node shape" .
+
+tree:CollectionShapeLimitedShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:maxCount 1;
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:message "TPCR-03 (tree:shape usage) - a collection MUST NOT refer using its tree:shape property to more than one node shape" .
+
+tree:CollectionShapeNodeKindShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:or ([
+    sh:class sh:NodeShape
+  ] [
+    sh:node [ 
+      a sh:NodeShape; 
+      rdfs:label "NodeShape shape"@en ;
+      rdfs:comment "A shape describing SHACL shapes defined without a sh:NodeShape class."@en ;
+      sh:property [
+        sh:path sh:path;
+        sh:maxCount 0;
+        sh:name "SHACL Property Path";
+        sh:description "Property shapes specify constraints that need to be met with respect to nodes that can be reached from the focus node either by directly following a given property (specified as an IRI) or any other SHACL property path, specified using sh:path.";
+        sh:message "A node shape is a shape in the shapes graph that is not the subject of a triple with sh:path as its predicate. It is recommended, but not required, for a node shape to be declared as a SHACL instance of sh:NodeShape. SHACL instances of sh:NodeShape cannot have a value for the property sh:path."
+      ]
+    ]
+  ]);
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:message "TPCR-03 (tree:shape usage) - a collection MUST NOT refer using its tree:shape property to an invalid node shape" .
+
+tree:NodeShape a sh:NodeShape;
+	rdfs:label "Node shape"@en ;
+	rdfs:comment "A shape describing well-formed TREE nodes."@en ;
+  sh:targetClass tree:Node;
+  sh:property tree:NodeRelationNodeKindShape, tree:NodeRelationTypeShape .
+
+tree:NodeRelationNodeKindShape a sh:PropertyShape;
+  sh:path tree:relation;
+  sh:nodeKind sh:BlankNodeOrIRI;
+  sh:name "Tree relation";
+  sh:description "Links a node to a relation";
+  sh:message "TPPR-11 (tree:relation usage) - for every page that can be navigated to, a tree:Node MUST refer using a tree:relation property to a tree:Relation or sub-class thereof" .
+
+tree:NodeRelationTypeShape a sh:PropertyShape;
+  sh:path tree:relation;
+  sh:class tree:Relation;
+  sh:name "Tree relation";
+  sh:description "Links a node to a relation";
+  sh:message "TPPR-11 (tree:relation usage) - for every page that can be navigated to, a tree:Node MUST refer using a tree:relation property to a tree:Relation or sub-class thereof" .
+
+tree:RelationShape a sh:NodeShape;
+	rdfs:label "Relation shape"@en ;
+	rdfs:comment "A shape describing well-formed TREE relations."@en ;
+  sh:targetClass tree:Relation;
+  sh:property tree:RelationNodeRequiredShape, tree:RelationNodeNodeKindShape.
+
+tree:RelationNodeRequiredShape a sh:PropertyShape;
+  sh:path tree:node;
+  sh:minCount 1; 
+  sh:maxCount 1;
+  sh:name "Relation node";
+  sh:description "The URL to be derefenced when this relation cannot be pruned";
+  sh:message "TPPR-12 (tree:node usage) - a relation (tree:Relation or sub-class thereof) MUST refer using its tree:node property to a page that can be navigated to from the current page" .
+
+tree:RelationNodeNodeKindShape a sh:PropertyShape;
+  sh:path tree:node;
+  sh:nodeKind sh:IRI;
+  sh:name "Relation node";
+  sh:description "The URL to be derefenced when this relation cannot be pruned";
+  sh:message "TPPR-12 (tree:node usage) - a relation (tree:Relation or sub-class thereof) MUST refer using its tree:node property to a page that can be navigated to from the current page" .
+
+tree:NodeTypeShape a sh:NodeShape;
+	sh:targetNode tree:Node ;
+  sh:property tree:NodeTypeRequiredShape, tree:NodeSubjectNodeKindShape .
+
+tree:NodeTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1;
+  sh:name "tree:Node count";
+  sh:message "TPPR-04a (contains tree:Node) - a page MUST contain exactly one tree:Node whose subject is an URL" .
+
+tree:NodeSubjectNodeKindShape a sh:PropertyShape ;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:nodeKind sh:IRI ;
+  sh:name "tree:Node count";
+  sh:message "TPPR-04a (contains tree:Node) - a page MUST contain exactly one tree:Node whose subject is an URL" .
+
+tree:CollectionTypeShape a sh:NodeShape;
+	sh:targetNode tree:Collection ;
+  sh:property tree:CollectionTypeRequiredShape, tree:CollectionTypeNodeKindShape .
+
+tree:CollectionTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1 ;
+  sh:name "tree:Collection count";
+  sh:message "TPPR-05 (contains tree:Collection) - a page MUST contain exactly one tree:Collection" .
+
+tree:CollectionTypeNodeKindShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:nodeKind sh:IRI;
+  sh:name "tree:Collection identity";
+  sh:message "TPCR-02 (LDES IRI) - a collection MUST be identified using a named node (and not a blank node)" .

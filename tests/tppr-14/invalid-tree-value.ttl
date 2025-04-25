@@ -1,0 +1,15 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+
+ex:Relation0 a tree:Relation .
+
+ex:Relation1 a tree:PrefixRelation ; tree:value [] .
+ex:Relation2 a tree:SubstringRelation ; tree:value [] .
+ex:Relation3 a tree:SuffixRelation ; tree:value [] .
+ex:Relation4 a tree:GreaterThanRelation ; tree:value [] .
+ex:Relation5 a tree:GreaterThanOrEqualToRelation ; tree:value [] .
+ex:Relation6 a tree:LessThanRelation ; tree:value [] .
+ex:Relation7 a tree:LessThanOrEqualToRelation ; tree:value [] .
+ex:Relation8 a tree:EqualToRelation ; tree:value [] .
+ex:Relation9 a tree:NotEqualToRelation ; tree:value [] .
+ex:Relation10 a tree:GeospatiallyContainsRelation ; tree:value [] .

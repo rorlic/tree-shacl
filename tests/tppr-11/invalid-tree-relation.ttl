@@ -1,0 +1,6 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Node1 a tree:Node ;
+  tree:relation "ex:Relation1"^^xsd:string .

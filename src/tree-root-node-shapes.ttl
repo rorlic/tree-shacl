@@ -1,0 +1,15 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+tree:CollectionShape sh:property tree:CollectionViewRequiredShape .
+
+tree:CollectionViewRequiredShape a sh:PropertyShape;
+  sh:path tree:view;
+  sh:node tree:NodeShape;
+  sh:minCount 1; 
+  sh:maxCount 1;
+  sh:name "Tree view";
+  sh:description "Links the collection to the current tree:Node";
+  sh:message "TPPR-06 (tree:view in root) - in a root page, a collection MUST refer using its tree:view property to this tree:Node" .

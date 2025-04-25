@@ -1,0 +1,17 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo:  <http://www.opengis.net/ont/geosparql#> .
+
+ex:Relation0 a tree:Relation .
+
+ex:Relation1 a tree:PrefixRelation ; tree:value "some" .
+ex:Relation2 a tree:SubstringRelation ; tree:value "thing" .
+ex:Relation3 a tree:SuffixRelation ; tree:value "else" .
+ex:Relation4 a tree:GreaterThanRelation ; tree:value "3"^^xsd:integer .
+ex:Relation5 a tree:GreaterThanOrEqualToRelation ; tree:value 5.5 .
+ex:Relation6 a tree:LessThanRelation ; tree:value "something" .
+ex:Relation7 a tree:LessThanOrEqualToRelation ; tree:value ex:Something .
+ex:Relation8 a tree:EqualToRelation ; tree:value ex:Else .
+ex:Relation9 a tree:NotEqualToRelation ; tree:value ex:Thing .
+ex:Relation10 a tree:GeospatiallyContainsRelation ; tree:value "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON((3.698358535766602 51.06702103582688,3.734064102172852 51.068746985743246,3.748140335083008 51.04619669418912,3.736467361450195 51.036266768626234,3.723936080932617 51.03777798155201,3.6913204193115234 51.05795874283152,3.698358535766602 51.06702103582688))"^^geo:wktLiteral .

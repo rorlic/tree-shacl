@@ -1,0 +1,8 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Relation1 a tree:GeospatiallyContainsRelation ; tree:value ex:something .
+ex:Relation2 a tree:GeospatiallyContainsRelation ; tree:value 123 .
+ex:Relation3 a tree:GeospatiallyContainsRelation ; tree:value "something else" .
+ex:Relation3 a tree:GeospatiallyContainsRelation ; tree:value "http://example.org/also-invalid"^^xsd:anyURI .

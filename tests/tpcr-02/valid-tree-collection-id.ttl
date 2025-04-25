@@ -1,0 +1,5 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+
+ex:Collection1 a tree:Collection ; tree:shape [a sh:NodeShape] ; tree:member ex:Member1 .

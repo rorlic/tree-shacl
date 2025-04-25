@@ -1,0 +1,10 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+
+ex:Relation1 a tree:EqualToRelation ; tree:path ex:parent .
+ex:Relation2 a tree:EqualToRelation ; tree:path ( ex:parent ex:firstName ex:lastName ) .
+ex:Relation3 a tree:EqualToRelation ; tree:path [ sh:alternativePath ( ex:father ex:mother  ) ] .
+ex:Relation4 a tree:EqualToRelation ; tree:path [ sh:inversePath ex:parent ] .
+ex:Relation5 a tree:EqualToRelation ; tree:path ( rdf:type [ sh:zeroOrMorePath rdfs:subClassOf ] ) .
+ex:Relation6 a tree:EqualToRelation ; tree:path ( rdf:type [ sh:oneOrMorePath [ sh:inversePath ex:parent ] ] ) .
+ex:Relation7 a tree:EqualToRelation ; tree:path ( rdf:type [ sh:zeroOrOnePath [ sh:inversePath ex:parent ] ] ) .
