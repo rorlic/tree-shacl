@@ -8,8 +8,8 @@
 tree: owl:imports <https://w3id.org/tree/> .
 
 tree:CollectionShape a sh:NodeShape;
-	rdfs:label "Collection shape"@en ;
-	rdfs:comment "A shape describing well-formed TREE collections."@en ;
+  rdfs:label "Collection shape"@en ;
+  rdfs:comment "A shape describing well-formed TREE collections."@en ;
   sh:targetClass tree:Collection;
   sh:property tree:CollectionMemberSuggestedShape, tree:CollectionMemberNodeKindShape, 
               tree:CollectionShapeSuggestedShape, tree:CollectionShapeLimitedShape, tree:CollectionShapeNodeKindShape .
@@ -67,8 +67,8 @@ tree:CollectionShapeNodeKindShape a sh:PropertyShape;
   sh:message "TPCR-03 (tree:shape usage) - a collection MUST NOT refer using its tree:shape property to an invalid node shape" .
 
 tree:NodeShape a sh:NodeShape;
-	rdfs:label "Node shape"@en ;
-	rdfs:comment "A shape describing well-formed TREE nodes."@en ;
+  rdfs:label "Node shape"@en ;
+  rdfs:comment "A shape describing well-formed TREE nodes."@en ;
   sh:targetClass tree:Node;
   sh:property tree:NodeRelationNodeKindShape, tree:NodeRelationTypeShape .
 
@@ -87,8 +87,8 @@ tree:NodeRelationTypeShape a sh:PropertyShape;
   sh:message "TPPR-11 (tree:relation usage) - for every page that can be navigated to, a tree:Node MUST refer using a tree:relation property to a tree:Relation or sub-class thereof" .
 
 tree:RelationShape a sh:NodeShape;
-	rdfs:label "Relation shape"@en ;
-	rdfs:comment "A shape describing well-formed TREE relations."@en ;
+  rdfs:label "Relation shape"@en ;
+  rdfs:comment "A shape describing well-formed TREE relations."@en ;
   sh:targetClass tree:Relation;
   sh:property tree:RelationNodeRequiredShape, tree:RelationNodeNodeKindShape.
 
@@ -108,7 +108,7 @@ tree:RelationNodeNodeKindShape a sh:PropertyShape;
   sh:message "TPPR-12 (tree:node usage) - a relation (tree:Relation or sub-class thereof) MUST refer using its tree:node property to a page that can be navigated to from the current page" .
 
 tree:NodeTypeShape a sh:NodeShape;
-	sh:targetNode tree:Node ;
+  sh:targetNode tree:Node ;
   sh:property tree:NodeTypeRequiredShape, tree:NodeSubjectNodeKindShape .
 
 tree:NodeTypeRequiredShape a sh:PropertyShape;
@@ -125,7 +125,7 @@ tree:NodeSubjectNodeKindShape a sh:PropertyShape ;
   sh:message "TPPR-04a (contains tree:Node) - a page MUST contain exactly one tree:Node whose subject is an URL" .
 
 tree:CollectionTypeShape a sh:NodeShape;
-	sh:targetNode tree:Collection ;
+  sh:targetNode tree:Collection ;
   sh:property tree:CollectionTypeRequiredShape, tree:CollectionTypeNodeKindShape .
 
 tree:CollectionTypeRequiredShape a sh:PropertyShape;
