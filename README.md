@@ -72,7 +72,7 @@ Definitions:
 ## Consumer Requirements
 
 ### Initialization (TCIR)
-1. a client SHOULD be initialized with a URL
+1. a client MUST be initialized with a URL
 2. a client MUST dereference the URL it is initiated with and parse the resulting (immediate or redirected) response (initial page)
 3. if a triple `?c tree:view ?n` exists in the above response AND ?n matches the (last) redirected URL, then a client MUST assume that ?n is the URI of the root node and ?c is the URI of the collection
 4. if a triple `?c tree:view ?n` exists in the above response AND ?c matches the initial URL before any redirection AND there is only one such triple, then a client MUST assume that ?n is the root node and ?c is the collection URI
