@@ -29,7 +29,13 @@ export async function createValidator(files: string[]) {
     await shapes.import(rdf.fromFile(`./src/${file}`));
   }
 
-  return new SHACLValidator(shapes, { factory: rdf, importGraph: importGraph });
+  const validator = new SHACLValidator(shapes, { factory: rdf, importGraph: importGraph });
+  
+  // preload owl imports
+  const data = rdf.dataset();
+  await validator.validate(data);
+
+  return validator;
 }
 
 export interface ExpectedResult { sourceShape: string, focusNode: string, path?: string };
