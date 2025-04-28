@@ -139,4 +139,4 @@ tree:CollectionTypeNodeKindShape a sh:PropertyShape;
   sh:path [ sh:inversePath rdf:type ] ;
   sh:nodeKind sh:IRI;
   sh:name "tree:Collection identity";
-  sh:message "TPCR-02 (LDES IRI) - a collection MUST be identified using a named node (and not a blank node)" .
+  sh:message "TPCR-02 (tree:Collection IRI) - a collection MUST be identified using a named node (and not a blank node)" .
