@@ -3,7 +3,7 @@ import {
   expectViolation, ExpectedResult, expectNoViolation, validateFile, createValidator, 
 } from './utilities';
 
-describe('Test TPCR-02 (LDES IRI)', async () => {
+describe('Test TPCR-02 (tree:Collection IRI)', async () => {
   const validator = await createValidator(['tree-base-shapes.ttl']);
   const relationKindShape = 'https://w3id.org/tree#CollectionTypeNodeKindShape';
   const treeCollection = 'https://w3id.org/tree#Collection';
