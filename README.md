@@ -9,6 +9,7 @@ This repository contains a number of [SHACL](https://www.w3.org/TR/shacl/) shape
 
 The shapes can be found in the [src](./src/) directory and are split into 4 files:
 * the [base shapes](./src/tree-base-shapes.ttl) file contains shapes to validate pages of a TREE web API that provides only simple tree traversal (no pruning)
+* the [tree:Collection (type) shapes](./src/tree-collection-shapes.ttl) are not part of the [base shapes](./src/tree-base-shapes.ttl) because these do not be apply to sub-classes, only to the tree:Collection class itself
 * the [advanced shapes](./src/tree-advanced-shapes.ttl) file contains additional shapes needed to validate a TREE web API that allows to prune the search tree
 * in addition, you need either the [root node shapes](./src/tree-root-node-shapes.ttl) or the [non-root node shapes](./src/tree-non-root-node-shapes.ttl) to validate the first page respectively all other pages
 
