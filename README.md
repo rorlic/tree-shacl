@@ -41,9 +41,9 @@ Definitions:
 5. **a page MUST contain a collection, which is a `tree:Collection`**
 6. **in a root page, a collection MUST refer using its `tree:view` property to this `tree:Node`**
 7. **in a non-root page, a collection MAY refer using its `tree:view` property to this `tree:Node`**
-8. a page MAY link to one or more other pages that can be navigated to from the current page
-9. a page MUST NOT be reachable from more than one page
-10. a page MUST NOT contain a link to itself
+8. **a page MAY link to one or more other pages that can be navigated to from the current page**
+9. **a page MUST NOT be reachable from more than one page**
+10. **a page MUST NOT contain a link to itself**
 11. **for every page that can be navigated to, a `tree:Node` MUST refer using a `tree:relation` property to a `tree:Relation` or sub-class thereof**
 12. **a relation (`tree:Relation` or sub-class thereof) MUST refer using its `tree:node` property to a page that can be navigated to from the current page**
 13. **a specific relation (`?relation a ?type` and `?type rdfs:subClassOf tree:Relation`) MUST include a `tree:path` property** to specify a [property path](https://www.w3.org/TR/shacl/#x2.3.1-shacl-property-paths) that defines how to find a member's value for comparison with its `tree:value` property

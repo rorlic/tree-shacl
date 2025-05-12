@@ -1,0 +1,13 @@
+@prefix tree: <https://w3id.org/tree#> .
+@prefix ex:   <http://example.org/> .
+
+ex:Node1 a tree:Node ;
+  tree:relation 
+    [ a tree:Relation; tree:node ex:Node2 ], 
+    [ a tree:Relation; tree:node ex:Node3 ] .
+
+ex:Node2 a tree:Node ;
+  tree:relation 
+    [ a tree:Relation; tree:node ex:Node3 ] .
+
+ex:Node3 a tree:Node .
