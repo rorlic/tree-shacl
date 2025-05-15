@@ -5,7 +5,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-05 (contains tree:Collection)', async () => {
-  const validator = await createValidator(['tree-base-shapes.ttl', 'tree-collection-shapes.ttl']);
+  const validator = await createValidator(['tree-base-shapes.ttl']);
   const nodeShape = 'https://w3id.org/tree#CollectionTypeRequiredShape';
   const focusNode = 'https://w3id.org/tree#Collection';
 

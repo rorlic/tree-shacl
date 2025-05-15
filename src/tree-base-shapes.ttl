@@ -123,3 +123,20 @@ tree:NodeSubjectNodeKindShape a sh:PropertyShape ;
   sh:nodeKind sh:IRI ;
   sh:name "tree:Node count";
   sh:message "TPPR-04a (contains tree:Node) - a page MUST contain exactly one tree:Node whose subject is an URL" .
+
+tree:CollectionTypeShape a sh:NodeShape;
+	sh:targetNode tree:Collection ;
+  sh:property tree:CollectionTypeRequiredShape, tree:CollectionTypeNodeKindShape .
+
+tree:CollectionTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1 ;
+  sh:name "tree:Collection count";
+  sh:message "TPPR-05 (contains tree:Collection) - a page MUST contain exactly one tree:Collection" .
+
+tree:CollectionTypeNodeKindShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:nodeKind sh:IRI;
+  sh:name "tree:Collection identity";
+  sh:message "TPCR-02 (tree:Collection IRI) - a collection MUST be identified using a named node (and not a blank node)" .
