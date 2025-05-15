@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-14 (tree:value usage)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl', 'tree-advanced-shapes.ttl']);
+  const validator = await createValidator(['tree-common-shapes.ttl', 'tree-relation-shapes.ttl']);
   const valueRequiredShape = 'https://w3id.org/tree#RelationValueRequiredShape';
   const valueValidShape = 'https://w3id.org/tree#RelationValueKindShape';
   const treePath = 'https://w3id.org/tree#value';
