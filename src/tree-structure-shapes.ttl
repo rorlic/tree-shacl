@@ -5,25 +5,26 @@ tree:NodeShape a sh:NodeShape;
   sh:targetClass tree:Node ;
   sh:property tree:OutgoingLinksShape .
 
-tree:OutgoingLinksShape a sh:PropertyShape;
-  sh:path (tree:relation tree:node) ;
-  sh:minCount 0; 
-  sh:name "tree:Node outgoing links";
-  sh:message "TPPR-08 (outgoing links) - a page MAY link to one or more other pages that can be navigated to from the current page" .
-
-tree:NodeLinkInShape a sh:NodeShape;
-  sh:targetObjectsOf tree:node ;
-  sh:property tree:IncomingLinksShape .
-
-tree:IncomingLinksShape a sh:PropertyShape;
-  sh:path ([sh:inversePath tree:node] [sh:inversePath tree:relation]) ;
-  sh:maxCount 1; 
-  sh:name "tree:Node incoming links";
-  sh:message "TPPR-09 (incoming links) - a page MUST NOT be reachable from more than one page" .
-
 tree:NodeSelfLinkShape a sh:NodeShape ;
   sh:targetClass tree:Relation ;
   sh:not [ a sh:PropertyShape;
     sh:path [sh:inversePath tree:relation];
     sh:equals tree:node 
   ].
+
+tree:NodeLinkInShape a sh:NodeShape;
+  sh:targetObjectsOf tree:node ;
+  sh:property tree:IncomingLinksShape .
+
+
+tree:OutgoingLinksShape a sh:PropertyShape;
+  sh:path (tree:relation tree:node) ;
+  sh:minCount 0; 
+  sh:name "tree:Node outgoing links";
+  sh:message "TPPR-08 (outgoing links) - a page MAY link to one or more other pages that can be navigated to from the current page" .
+
+tree:IncomingLinksShape a sh:PropertyShape;
+  sh:path ([sh:inversePath tree:node] [sh:inversePath tree:relation]) ;
+  sh:maxCount 1; 
+  sh:name "tree:Node incoming links";
+  sh:message "TPPR-09 (incoming links) - a page MUST NOT be reachable from more than one page" .
