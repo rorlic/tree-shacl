@@ -12,7 +12,8 @@ tree:CollectionShape a sh:NodeShape;
   rdfs:label "Collection shape"@en ;
   rdfs:comment "A shape describing well-formed TREE collections."@en ;
   sh:property tree:CollectionMemberSuggestedShape, tree:CollectionMemberNodeKindShape, 
-              tree:CollectionShapeSuggestedShape, tree:CollectionShapeLimitedShape, tree:CollectionShapeNodeKindShape .
+              tree:CollectionShapeSuggestedShape, tree:CollectionShapeLimitedShape, tree:CollectionShapeNodeKindShape,
+              tree:CollectionViewSuggestedShape, tree:CollectionViewLimitedShape .
 
 tree:NodeShape a sh:NodeShape;
   sh:targetClass tree:Node;
@@ -54,6 +55,23 @@ tree:CollectionTypeRequiredShape a sh:PropertyShape;
   sh:maxCount 1 ;
   sh:name "tree:Collection count";
   sh:message "TPPR-05 (contains tree:Collection) - a page MUST contain exactly one tree:Collection" .
+
+tree:CollectionViewSuggestedShape a sh:PropertyShape;
+  sh:path tree:view;
+  sh:node tree:NodeShape;
+  sh:minCount 1;
+  sh:name "Tree view";
+  sh:description "Links the collection to the current tree:Node";
+  sh:severity sh:Info;
+  sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MAY refer using its tree:view property to this tree:Node" .
+
+tree:CollectionViewLimitedShape a sh:PropertyShape;
+  sh:path tree:view;
+  sh:node tree:NodeShape;
+  sh:maxCount 1;
+  sh:name "Tree view";
+  sh:description "Links the collection to the current tree:Node";
+  sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MUST NOT refer using its tree:view property to multiple tree:Node" .
 
 tree:NodeRelationNodeKindShape a sh:PropertyShape;
   sh:path tree:relation;
