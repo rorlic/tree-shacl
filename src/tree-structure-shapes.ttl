@@ -1,7 +1,7 @@
 @prefix tree: <https://w3id.org/tree#>.
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 
-tree:NodeShape a sh:NodeShape;
+tree:NodeOutLinkShape a sh:NodeShape;
   sh:targetClass tree:Node ;
   sh:property tree:OutgoingLinksShape .
 
@@ -12,7 +12,7 @@ tree:NodeSelfLinkShape a sh:NodeShape ;
     sh:equals tree:node 
   ].
 
-tree:NodeLinkInShape a sh:NodeShape;
+tree:NodeInLinkShape a sh:NodeShape;
   sh:targetObjectsOf tree:node ;
   sh:property tree:IncomingLinksShape .
 
