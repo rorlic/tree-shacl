@@ -5,7 +5,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-04 (contains tree:Node)', async () => {
-  const validator = await createValidator(['tree-base-shapes.ttl']);
+  const validator = await createValidator(['tree-common-shapes.ttl']);
   const nodeRequiredShape = 'https://w3id.org/tree#NodeTypeRequiredShape';
   const nodeSubjectShape = 'https://w3id.org/tree#NodeSubjectNodeKindShape';
   const focusNode = 'https://w3id.org/tree#Node';

@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-13 (tree:path usage)', async () => {
-  const validator = await createValidator(['tree-base-shapes.ttl', 'tree-advanced-shapes.ttl']);
+  const validator = await createValidator(['tree-common-shapes.ttl', 'tree-advanced-shapes.ttl']);
   const pathRequiredShape = 'https://w3id.org/tree#RelationPathRequiredShape';
   const treePath = 'https://w3id.org/tree#path';
 

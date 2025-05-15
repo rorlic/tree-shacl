@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-12 (tree:node usage)', async () => {
-  const validator = await createValidator(['tree-base-shapes.ttl']);
+  const validator = await createValidator(['tree-common-shapes.ttl']);
   const nodeRequiredShape = 'https://w3id.org/tree#RelationNodeRequiredShape';
   const nodeKindShape = 'https://w3id.org/tree#RelationNodeNodeKindShape';
   const treeNode = 'https://w3id.org/tree#node';

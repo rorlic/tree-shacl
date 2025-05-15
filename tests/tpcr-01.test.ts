@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPCR-01 (tree:member usage)', async () => {
-  const validator = await createValidator(['tree-base-shapes.ttl']);
+  const validator = await createValidator(['tree-common-shapes.ttl']);
   const memberSuggestedShape = 'https://w3id.org/tree#CollectionMemberSuggestedShape';
   const memberKindShape = 'https://w3id.org/tree#CollectionMemberNodeKindShape';
   const treeMember = 'https://w3id.org/tree#member';
