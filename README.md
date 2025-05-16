@@ -34,9 +34,9 @@ Definitions:
 * a _focus node_ is a subject from which all the quads of a member can be retrieved and extracted (by the [member extraction algorithm](https://treecg.github.io/specification/#member-extraction-algorithm)) -- see also [here](https://w3c.github.io/data-shapes/shacl/#focusNodes)
 
 ### Page Requirements (TPPR)
-1. the Web API MUST use HTTP(S) as its protocol
-2. every page MUST contain linked data in a (commonly used) [RDF serialization format](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)
-3. every page MUST be directly or indirectly (by redirection) the result of a API request for a node
+1. ***the Web API MUST use HTTP(S) as its protocol***
+2. ***every page MUST contain linked data in a (commonly used) [RDF serialization format](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)***
+3. ***every page MUST be directly or indirectly (by redirection) the result of a API request for a node***
 4. **a page MUST contain exactly one `tree:Node` whose subject is an URL** and, vice-versa, this page is the result of requesting this URL
 5. **a page MUST contain a collection, which is a `tree:Collection`**
 6. **in a root page, a collection MUST refer using its `tree:view` property to this `tree:Node`**
