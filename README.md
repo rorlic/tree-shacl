@@ -37,7 +37,7 @@ Definitions:
 1. ***the Web API MUST use HTTP(S) as its protocol***
 2. ***every page MUST contain linked data in a (commonly used) [RDF serialization format](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)***
 3. ***every page MUST be directly or indirectly (by redirection) the result of a API request for a node***
-4. **a page MUST contain exactly one `tree:Node` whose subject is an URL** and, vice-versa, this page is the result of requesting this URL
+4. **a page MUST contain exactly one `tree:Node` whose subject is an URL and, vice-versa, this page is the result of requesting this URL**
 5. **a page MUST contain a collection, which is a `tree:Collection`**
 6. **in a root page, a collection MUST refer using its `tree:view` property to this `tree:Node`**
 7. **in a non-root page, a collection MAY refer using its `tree:view` property to this `tree:Node`**
@@ -46,7 +46,7 @@ Definitions:
 10. **a page MUST NOT contain a link to itself**
 11. **for every page that can be navigated to, a `tree:Node` MUST refer using a `tree:relation` property to a `tree:Relation` or sub-class thereof**
 12. **a relation (`tree:Relation` or sub-class thereof) MUST refer using its `tree:node` property to a page that can be navigated to from the current page**
-13. **a specific relation (`?relation a ?type` and `?type rdfs:subClassOf tree:Relation`) MUST include a `tree:path` property** to specify a [property path](https://www.w3.org/TR/shacl/#x2.3.1-shacl-property-paths) that defines how to find a member's value for comparison with its `tree:value` property
+13. **a specific relation (`?relation a ?type` and `?type rdfs:subClassOf tree:Relation`) MUST include a `tree:path` property to specify a [property path](https://www.w3.org/TR/shacl/#x2.3.1-shacl-property-paths) that defines how to find a member's value for comparison with its `tree:value` property**
 14. **a specific relation MUST refer using its `tree:value` property to the (literal or URI) value used for comparing with a member's value found by its `tree:path` property**
 15. a specific relation defines an implicit comparison which MUST constraint the members that can be reached by following the relation link
 16. a specific relation for string matching (`tree:PrefixRelation`, `tree:SubstringRelation`, `tree:PostfixRelation`, `tree:EqualToRelation`, and `tree:NotEqualToRelation`) MUST use unicode canonical equivalence for string matching
