@@ -8,10 +8,9 @@ In order to be compliant with the [TREE hypermedia specification](https://treecg
 This repository contains a number of [SHACL](https://www.w3.org/TR/shacl/) shapes that can be used to validate that the pages of a web API  are compliant to the TREE specification. The shapes help to validate a set of requirements that have been extracted from the TREE specification as it currently stands (Draft Community Group Report, 20 March 2025).
 
 The shapes can be found in the [src](./src/) directory and are split into 4 files:
-* the [common shapes](./src/tree-common-shapes.ttl) file contains common shapes to validate pages of a TREE web API. These allow to validate simple tree traversal without TREE pruning
-* the [relation shapes](./src/tree-relation-shapes.ttl) file contains additional shapes needed to validate a TREE web API that allows to prune the search tree
-* the [root node shapes](./src/tree-root-node-shapes.ttl) file contains additional shapes needed to validate the first (root) page (both with or without pruning)
-* the [structure shapes](./src/tree-structure-shapes.ttl) file contains shapes to validate the structure of the TREE itself and needs to happen on the union of a collection of TREE nodes as opposed to a TREE node on its own
+* the [common shapes](./src/tree-common-shapes.ttl) file contains common shapes to validate pages of a TREE web API.
+* the [root node shapes](./src/tree-root-node-shapes.ttl) file contains additional shapes needed to validate the first (root) page.
+* the [structure shapes](./src/tree-structure-shapes.ttl) file contains shapes to validate the structure of the TREE itself and needs to happen on the union of a collection of TREE nodes as opposed to a TREE node on its own.
 
 This repository also contains a set of unit tests that check the correctness of the above shape files. To run the tests you need to install the required packages:
 ```bash
