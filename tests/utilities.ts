@@ -91,9 +91,3 @@ export function expectNoInfo(sourceShape: string, report: ValidationReport) {
     x.severity.equals(rdf.namedNode(Severity.information)) && x.sourceShape.equals(rdf.namedNode(sourceShape)));
   assert.isEmpty(violations);
 }
-
-export function expectMissingEntityViolation(sourceShape: string, report: ValidationReport) {
-  const errors = report.results.filter((x: ValidationResult) =>
-    x.severity.equals(rdf.namedNode(Severity.violation)) && x.sourceShape.equals(rdf.namedNode(sourceShape)));
-  expect(errors.length).toBe(1);
-}
