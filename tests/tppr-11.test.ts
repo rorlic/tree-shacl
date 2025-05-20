@@ -1,6 +1,6 @@
 import { it, describe } from 'vitest';
 import { expectViolation, ExpectedResult, expectNoViolation, validateFile, createValidator } from './utilities';
-import { minCountConstraint, maxCountConstraint, nodeKindConstraint, classConstraint } from './constraints';
+import { nodeKindConstraint, classConstraint } from './constraints';
 
 describe('Test TPPR-11 (tree:relation usage)', async () => {
   const validator = await createValidator(['tree-common-shapes.ttl']);
