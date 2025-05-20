@@ -162,46 +162,23 @@ tree:CollectionShapeNodeKindShape a sh:PropertyShape;
   sh:description "The SHACL shape the members of the collection adhere to";
   sh:message "TPCR-03 (tree:shape usage) - a collection MUST NOT refer using its tree:shape property to an invalid node shape" .
 
+tree:RelationSubclassPathRequiredShape a sh:NodeShape ;
+  sh:targetObjectsOf tree:relation ;
+  sh:xone (
+    [ sh:property [ sh:path rdf:type ; sh:hasValue tree:Relation ] ]
+    [ sh:property tree:RelationPathRequiredShape ]
+  ) .
 
-tree:PrefixRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:PrefixRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:SubstringRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:SubstringRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:SuffixRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:SuffixRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:GreaterThanRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:GreaterThanRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:GreaterThanOrEqualToRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:GreaterThanOrEqualToRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:LessThanRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:LessThanRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:LessThanOrEqualToRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:LessThanOrEqualToRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:EqualToRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:EqualToRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
-
-tree:NotEqualToRelationTypeShape a sh:NodeShape ;
- sh:targetClass tree:NotEqualToRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape .
+tree:RelationSubclassValueRequiredShape a sh:NodeShape ;
+  sh:targetObjectsOf tree:relation ;
+  sh:xone (
+    [ sh:property [ sh:path rdf:type ; sh:hasValue tree:Relation ] ]
+    [ sh:property tree:RelationValueRequiredShape ]
+  ) .
 
 tree:GeospatiallyContainsRelationTypeShape a sh:NodeShape ;
  sh:targetClass tree:GeospatiallyContainsRelation ;
- sh:property tree:RelationPathRequiredShape, tree:RelationValueRequiredShape, tree:RelationValueKindShape, tree:GeospatiallyContainsValueKindShape .
+ sh:property tree:GeospatiallyContainsValueKindShape .
 
 tree:RelationPathRequiredShape a sh:PropertyShape ;
  sh:path tree:path;
@@ -215,12 +192,6 @@ tree:RelationValueRequiredShape a sh:PropertyShape ;
  sh:path tree:value;
  sh:minCount 1; 
  sh:maxCount 1;
- sh:name "Relation value";
- sh:description "The contextual value of this node: may contain e.g., a WKT-string with the bound of a rectangle, may contain a string, an integer, or even link to another resource where clear comparison rules apply.";
- sh:message "TPPR-14 (tree:value usage) - a specific relation MUST refer using its tree:value property to the (literal or URI) value used for comparing with a member's value found by its tree:path property" .
-
-tree:RelationValueKindShape a sh:PropertyShape ;
- sh:path tree:value;
  sh:nodeKind sh:IRIOrLiteral;
  sh:name "Relation value";
  sh:description "The contextual value of this node: may contain e.g., a WKT-string with the bound of a rectangle, may contain a string, an integer, or even link to another resource where clear comparison rules apply.";

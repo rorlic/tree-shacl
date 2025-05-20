@@ -1,6 +1,19 @@
 @prefix tree: <https://w3id.org/tree#> .
 @prefix ex:   <http://example.org/> .
 
+ex:Node1 tree:relation 
+  ex:Relation0,
+  ex:Relation1,
+  ex:Relation2,
+  ex:Relation3,
+  ex:Relation4,
+  ex:Relation5,
+  ex:Relation6,
+  ex:Relation7,
+  ex:Relation8,
+  ex:Relation9,
+  ex:Relation10 .
+
 ex:Relation0 a tree:Relation .
 
 ex:Relation1 a tree:PrefixRelation ; tree:value [] .
