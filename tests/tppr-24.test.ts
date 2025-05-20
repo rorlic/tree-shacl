@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-24 (geospatially contains)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl', 'tree-relation-shapes.ttl']);
+  const validator = await createValidator(['tree-common-shapes.ttl']);
   const valueValidShape = 'https://w3id.org/tree#GeospatiallyContainsValueKindShape';
   const treePath = 'https://w3id.org/tree#value';
 
