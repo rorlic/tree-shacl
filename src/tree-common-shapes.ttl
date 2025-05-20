@@ -34,18 +34,12 @@ tree:CollectionTypeShape a sh:NodeShape;
 
 tree:NodeTypeShape a sh:NodeShape;
   sh:targetNode tree:Node ;
-  sh:property tree:NodeTypeRequiredShape, tree:NodeSubjectNodeKindShape .
-
+  sh:property tree:NodeTypeRequiredShape .
 
 tree:NodeTypeRequiredShape a sh:PropertyShape;
   sh:path [ sh:inversePath rdf:type ] ;
   sh:minCount 1; 
   sh:maxCount 1;
-  sh:name "tree:Node count";
-  sh:message "TPPR-04a (contains tree:Node) - a page MUST contain exactly one tree:Node whose subject is an URL" .
-
-tree:NodeSubjectNodeKindShape a sh:PropertyShape ;
-  sh:path [ sh:inversePath rdf:type ] ;
   sh:nodeKind sh:IRI ;
   sh:name "tree:Node count";
   sh:message "TPPR-04a (contains tree:Node) - a page MUST contain exactly one tree:Node whose subject is an URL" .
