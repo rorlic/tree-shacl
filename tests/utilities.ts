@@ -38,16 +38,19 @@ export async function createValidator(files: string[]) {
   return validator;
 }
 
-export interface ExpectedResult { sourceShape: string, focusNode: string, path?: string };
+export interface ExpectedResult { sourceShape: string, focusNode: string, path?: string, constraint?: string };
 
 function expectValidationResult(severity: string, expectedResult: ExpectedResult, report: ValidationReport<any>, count: number = 1) {
   const errors = report.results.filter((x: ValidationResult) =>
-    x.severity.equals(rdf.namedNode(severity)) && x.sourceShape.equals(rdf.namedNode(expectedResult.sourceShape)));
+    x.severity.equals(rdf.namedNode(severity)) && 
+    x.sourceShape.equals(rdf.namedNode(expectedResult.sourceShape)) &&
+    (!expectedResult.constraint || x.sourceConstraintComponent.equals(rdf.namedNode(expectedResult.constraint))));
   expect(errors.length).toBe(count);
 
   const error = errors[0];
   if (expectedResult.focusNode) expect(error.focusNode).toStrictEqual(rdf.namedNode(expectedResult.focusNode));
   if (expectedResult.path) expect(error.path).toStrictEqual(rdf.namedNode(expectedResult.path));
+  if (expectedResult.constraint) expect(error.sourceConstraintComponent).toStrictEqual(rdf.namedNode(expectedResult.constraint));
 }
 
 enum Severity {
@@ -57,6 +60,9 @@ enum Severity {
 }
 
 export function expectViolation(expectedResult: ExpectedResult, report: ValidationReport, count: number = 1) {
+// console.log(report.results.map((x: ValidationResult) => (
+//   {source: x.sourceShape?.value, node: x.focusNode?.value, path: x.path, value: x.value?.value, constraint: x.sourceConstraintComponent?.value}
+// )))
   expectValidationResult(Severity.violation, expectedResult, report, count);
 }
 
