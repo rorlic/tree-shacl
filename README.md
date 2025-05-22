@@ -5,9 +5,9 @@
 
 In order to be compliant with the [TREE hypermedia specification](https://treecg.github.io/specification/) a producer can publish a web API that allows to access the members of a dataset (`tree:Collection`) using a number of pages (`tree:Node`) interlinked through relationships (`tree:Relation`), which together create a search tree. This  allows customers of the API to efficiently retrieve (parts of) the dataset. Both the web API producer and consumer must comply to certain requirements.
 
-This repository contains a number of [SHACL](https://www.w3.org/TR/shacl/) shapes that can be used to validate that the pages of a web API  are compliant to the TREE specification. The shapes help to validate a set of requirements that have been extracted from the TREE specification as it currently stands (Draft Community Group Report, 20 March 2025).
+This repository contains a number of [SHACL](https://www.w3.org/TR/shacl/) shapes that can be used to validate that the pages of a web API are compliant to the TREE specification. The shapes help to validate a set of requirements that have been extracted from the TREE specification as it currently stands (Draft Community Group Report, 20 March 2025).
 
-The shapes can be found in the [src](./src/) directory and are split into 4 files:
+The shapes can be found in the [src](./src/) directory and are split into 3 files:
 * the [common shapes](./src/tree-common-shapes.ttl) file contains common shapes to validate pages of a TREE web API.
 * the [root node shapes](./src/tree-root-node-shapes.ttl) file contains additional shapes needed to validate the first (root) page.
 * the [structure shapes](./src/tree-structure-shapes.ttl) file contains shapes to validate the structure of the TREE itself and needs to happen on the union of a collection of TREE nodes as opposed to a TREE node on its own.
