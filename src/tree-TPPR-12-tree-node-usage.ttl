@@ -1,0 +1,13 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+tree:RelationClassShape sh:property tree:RelationNodeRequiredShape.
+
+tree:RelationNodeRequiredShape a sh:PropertyShape;
+  sh:path tree:node;
+  sh:minCount 1; 
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:name "Relation node";
+  sh:description "The URL to be dereferenced when this relation cannot be pruned";
+  sh:message "TPPR-12 (tree:node usage) - a relation (tree:Relation or sub-class thereof) MUST refer using its tree:node property to a page that can be navigated to from the current page" .

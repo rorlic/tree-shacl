@@ -1,0 +1,13 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+tree:CollectionTypeShape sh:property tree:CollectionTypeRequiredShape .
+
+tree:CollectionTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1 ;
+  sh:name "tree:Collection count";
+  sh:description "Shape validating that only one tree:Collection exists in a TREE page."; 
+  sh:message "TPPR-05 (contains tree:Collection) - a page MUST contain exactly one tree:Collection" .

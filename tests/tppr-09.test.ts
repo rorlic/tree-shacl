@@ -5,7 +5,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-09 (incoming links)', async () => {
-  const validator = await createValidator(['tree-structure-shapes.ttl']);
+  const validator = await createValidator(['tree-TPPR-09-incoming-links.ttl']);
   const viewShape = 'https://w3id.org/tree#IncomingLinksShape';
   const exampleNode = 'http://example.org/Node3';
 

@@ -1,0 +1,12 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+tree:NodeClassShape sh:property tree:NodeRelationTypeShape .
+
+tree:NodeRelationTypeShape a sh:PropertyShape;
+  sh:path tree:relation;
+  sh:class tree:Relation;
+  sh:nodeKind sh:BlankNodeOrIRI;
+  sh:name "Tree relation";
+  sh:description "Links a node to a relation";
+  sh:message "TPPR-11 (tree:relation usage) - for every page that can be navigated to, a tree:Node MUST refer using a tree:relation property to a tree:Relation or sub-class thereof" .

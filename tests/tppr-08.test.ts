@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-08 (outgoing links)', async () => {
-  const validator = await createValidator(['tree-structure-shapes.ttl']);
+  const validator = await createValidator(['tree-TPPR-08-outgoing-links.ttl']);
   const viewShape = 'https://w3id.org/tree#OutgoingLinksShape';
 
   it('may have no outgoing links', async () => {

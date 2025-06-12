@@ -1,0 +1,3 @@
+tree-TPPR-08-outgoing-links.ttl
+tree-TPPR-09-incoming-links.ttl
+tree-TPPR-10-self-link.ttl

@@ -5,7 +5,7 @@ import {
 } from './utilities';
 
 describe('Test TPCR-03 (tree:shape usage)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl']);
+  const validator = await createValidator(['tree-common.ttl', 'tree-TPCR-03-tree-shape-usage.ttl']);
   const suggestedShape = 'https://w3id.org/tree#CollectionShapeSuggestedShape';
   const limitedShape = 'https://w3id.org/tree#CollectionShapeLimitedShape';
   const nodeKindShape = 'https://w3id.org/tree#CollectionShapeNodeKindShape';

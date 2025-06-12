@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TPCR-02 (tree:Collection IRI)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl']);
+  const validator = await createValidator(['tree-common.ttl', 'tree-TPCR-02-tree-Collection-IRI.ttl']);
   const relationKindShape = 'https://w3id.org/tree#CollectionTypeNodeKindShape';
   const treeCollection = 'https://w3id.org/tree#Collection';
 

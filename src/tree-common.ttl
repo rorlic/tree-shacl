@@ -1,0 +1,26 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+tree: owl:imports <https://w3id.org/tree/> .
+
+tree:CollectionClassShape a sh:NodeShape;
+  sh:targetClass tree:Collection;
+  rdfs:label "Collection class shape"@en ;
+  rdfs:comment "A shape describing well-formed TREE collections."@en .
+
+tree:NodeClassShape a sh:NodeShape;
+  sh:targetClass tree:Node;
+  rdfs:label "Node class shape"@en ;
+  rdfs:comment "A shape describing well-formed TREE nodes."@en .
+
+tree:RelationClassShape a sh:NodeShape;
+  sh:targetClass tree:Relation;
+  rdfs:label "Relation class shape"@en ;
+  rdfs:comment "A shape describing well-formed TREE relations."@en .
+
+tree:CollectionTypeShape a sh:NodeShape;
+	sh:targetNode tree:Collection ;
+  rdfs:label "Collection shape"@en ;
+  rdfs:comment "A shape ensuring that a TREE collection appears only once in a well-formed TREE page."@en .

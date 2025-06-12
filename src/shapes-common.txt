@@ -1,0 +1,14 @@
+tree-common.ttl
+
+tree-TPPR-04-contains-tree-Node.ttl
+tree-TPPR-05-contains-tree-Collection.ttl
+tree-TPPR-07-tree-view-in-non-root.ttl
+tree-TPPR-11-tree-relation-usage.ttl
+tree-TPPR-12-tree-node-usage.ttl
+tree-TPPR-13-tree-path-usage.ttl
+tree-TPPR-14-tree-value-usage.ttl
+tree-TPPR-24-geospatially-contains.ttl
+
+tree-TPCR-01-tree-member-usage.ttl
+tree-TPCR-02-tree-Collection-IRI.ttl
+tree-TPCR-03-tree-shape-usage.ttl

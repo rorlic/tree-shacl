@@ -61,7 +61,7 @@ enum Severity {
 
 export function expectViolation(expectedResult: ExpectedResult, report: ValidationReport, count: number = 1) {
 // console.log(report.results.map((x: ValidationResult) => (
-//   {source: x.sourceShape?.value, node: x.focusNode?.value, path: x.path, value: x.value?.value, constraint: x.sourceConstraintComponent?.value}
+//   {source: x.sourceShape?.value, node: x.focusNode?.value, path: x.path, value: x.value?.value, constraint: x.sourceConstraintComponent?.value, message: x.message[0]?.value}
 // )))
   expectValidationResult(Severity.violation, expectedResult, report, count);
 }

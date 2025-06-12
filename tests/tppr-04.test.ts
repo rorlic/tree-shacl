@@ -3,7 +3,7 @@ import { expectViolation, ExpectedResult, expectNoViolation, validateFile, creat
 import { nodeKindConstraint, minCountConstraint, maxCountConstraint } from './constraints';
 
 describe('Test TPPR-04 (contains tree:Node)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl']);
+  const validator = await createValidator(['tree-TPPR-04-contains-tree-Node.ttl']);
   const nodeShape = 'https://w3id.org/tree#NodeTypeRequiredShape';
   const focusNode = 'https://w3id.org/tree#Node';
 

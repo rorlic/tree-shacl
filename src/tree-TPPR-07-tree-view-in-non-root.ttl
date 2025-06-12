@@ -1,0 +1,21 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+tree:CollectionClassShape sh:property tree:CollectionViewSuggestedShape, tree:CollectionViewLimitedShape .
+
+tree:CollectionViewSuggestedShape a sh:PropertyShape;
+  sh:path tree:view;
+  sh:node tree:NodeClassShape;
+  sh:minCount 1;
+  sh:name "Tree view";
+  sh:description "Links the collection to the current tree:Node";
+  sh:severity sh:Info;
+  sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MAY refer using its tree:view property to this tree:Node" .
+
+tree:CollectionViewLimitedShape a sh:PropertyShape;
+  sh:path tree:view;
+  sh:node tree:NodeClassShape;
+  sh:maxCount 1;
+  sh:name "Tree view";
+  sh:description "Links the collection to the current tree:Node";
+  sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MUST NOT refer using its tree:view property to multiple tree:Node" .

@@ -3,7 +3,7 @@ import { expectViolation, ExpectedResult, validateFile, createValidator } from '
 import { minCountConstraint, maxCountConstraint, nodeKindConstraint } from './constraints';
 
 describe('Test TPPR-12 (tree:node usage)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl']);
+  const validator = await createValidator(['tree-common.ttl','tree-TPPR-12-tree-node-usage.ttl']);
   const nodeShape = 'https://w3id.org/tree#RelationNodeRequiredShape';
   const treeNode = 'https://w3id.org/tree#node';
   const exampleRelation = 'http://example.org/Relation1';

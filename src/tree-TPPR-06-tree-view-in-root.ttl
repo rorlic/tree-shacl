@@ -1,16 +1,14 @@
 @prefix tree: <https://w3id.org/tree#>.
 @prefix sh:  <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 tree:CollectionViewSuggestedShape sh:deactivated true.
 tree:CollectionViewLimitedShape sh:deactivated true.
 
-tree:CollectionShape sh:property tree:CollectionViewRequiredShape .
+tree:CollectionClassShape sh:property tree:CollectionViewRequiredShape .
 
 tree:CollectionViewRequiredShape a sh:PropertyShape;
   sh:path tree:view;
-  sh:node tree:NodeShape;
+  sh:node tree:NodeClassShape;
   sh:minCount 1; 
   sh:maxCount 1;
   sh:name "Tree view";

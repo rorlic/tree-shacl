@@ -1,0 +1,19 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+tree:CollectionClassShape sh:property tree:CollectionMemberSuggestedShape, tree:CollectionMemberNodeKindShape .
+
+tree:CollectionMemberSuggestedShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:minCount 1;
+  sh:name "Tree member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:severity sh:Info;
+  sh:message "TPCR-01 (tree:member usage) - a collection MUST refer using its tree:member property to a member's focus node for all (zero or more) members available in the page" .
+
+tree:CollectionMemberNodeKindShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:nodeKind sh:BlankNodeOrIRI;
+  sh:name "Tree member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:message "TPCR-01 (tree:member usage) - a collection MUST refer using its tree:member property to a member's focus node for all (zero or more) members available in the page" .

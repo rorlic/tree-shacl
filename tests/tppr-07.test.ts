@@ -5,7 +5,7 @@ import {
 } from './utilities';
 
 describe('Test TPPR-07 (tree:view in non-root)', async () => {
-  const validator = await createValidator(['tree-common-shapes.ttl']);
+  const validator = await createValidator(['tree-common.ttl','tree-TPPR-07-tree-view-in-non-root.ttl']);
   const viewRecommendedShape = 'https://w3id.org/tree#CollectionViewSuggestedShape';
   const viewLimitedShape = 'https://w3id.org/tree#CollectionViewLimitedShape';
   const treeView = 'https://w3id.org/tree#view';

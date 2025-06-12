@@ -1,0 +1,16 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+tree:NodeOutLinkShape a sh:NodeShape;
+  sh:targetClass tree:Node ;
+  sh:property tree:OutgoingLinksShape ;
+  rdfs:label "Outgoing links shape"@en ;
+  rdfs:comment "A shape describing that a node can contain references to many nodes."@en .
+
+tree:OutgoingLinksShape a sh:PropertyShape;
+  sh:path (tree:relation tree:node) ;
+  sh:minCount 0; 
+  sh:description "Shape validating that for each origin node there are zero or more destination nodes, thereby creating a tree structure (foreach ?o multiple ?d can exist in: ?o tree:relation/tree:node ?d).";
+  sh:name "tree:Node outgoing links";
+  sh:message "TPPR-08 (outgoing links) - a page MAY link to one or more other pages that can be navigated to from the current page" .
