@@ -1,0 +1,11 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+tree:CollectionClassShape sh:property tree:CollectionMemberNodeKindShape .
+
+tree:CollectionMemberNodeKindShape a sh:PropertyShape;
+  sh:path tree:member;
+  sh:nodeKind sh:BlankNodeOrIRI;
+  sh:name "Tree member";
+  sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
+  sh:message "TR4.2 - A collection MUST refer to each member's root focus node using a tree:member property" .
