@@ -1,0 +1,12 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+
+tree:CollectionClassShape sh:property tree:CollectionViewsRequiredShape .
+
+tree:CollectionViewsRequiredShape a sh:PropertyShape;
+  sh:path tree:view;
+  sh:node tree:NodeClassShape;
+  sh:minCount 1; 
+  sh:name "Tree view";
+  sh:description "List of tree:view in a collection";
+  sh:message "TR3.1 - In a collection response, a collection MUST refer to one or more root nodes using a tree:view property" .

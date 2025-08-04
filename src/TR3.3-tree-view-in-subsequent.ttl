@@ -1,7 +1,9 @@
 @prefix tree: <https://w3id.org/tree#>.
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-tree:CollectionClassShape sh:property tree:CollectionViewSuggestedShape, tree:CollectionViewLimitedShape .
+tree:CollectionClassShape sh:property 
+  tree:CollectionViewSuggestedShape, tree:CollectionViewLimitedShape, tree:CollectionViewCurrentNodeShape.
 
 tree:CollectionViewSuggestedShape a sh:PropertyShape;
   sh:path tree:view;
@@ -19,3 +21,10 @@ tree:CollectionViewLimitedShape a sh:PropertyShape;
   sh:name "Tree view";
   sh:description "Links the collection to the current tree:Node";
   sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MUST NOT refer using its tree:view property to multiple tree:Node" .
+
+tree:CollectionViewCurrentNodeShape a sh:PropertyShape;
+  sh:path (tree:view rdf:type);
+  sh:hasValue tree:Node;
+  sh:name "Tree view";
+  sh:description "Links the collection to the current tree:Node";
+  sh:message "TR3.2 - In a root page response, a collection MUST refer to the current page URL using its tree:view property" .

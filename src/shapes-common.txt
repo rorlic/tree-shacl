@@ -2,7 +2,6 @@ tree-common.ttl
 
 tree-TPPR-04-contains-tree-Node.ttl
 tree-TPPR-05-contains-tree-Collection.ttl
-tree-TPPR-07-tree-view-in-non-root.ttl
 tree-TPPR-11-tree-relation-usage.ttl
 tree-TPPR-12-tree-node-usage.ttl
 tree-TPPR-13-tree-path-usage.ttl

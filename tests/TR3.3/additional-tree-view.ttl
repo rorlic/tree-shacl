@@ -2,4 +2,6 @@
 @prefix ex:   <http://example.org/> .
 
 ex:Collection1 a tree:Collection;
-  tree:view ex:View1, ex:View2 .
+  tree:view ex:Node1, ex:Node2 .
+
+ex:Node1 a tree:Node .

@@ -30,6 +30,9 @@ This document is based on [The TREE hypermedia specification, Draft Community Gr
 * A *current page URL* is the final URL after all redirects when requesting a page.
 * A *WKT* ([Well Known Text](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) is a text-based representation of a geometric object.
 
+## Open Questions
+1. In a collection node that refers to multiple views (`tree:view`), are all referred nodes (`a tree:Node`) allowed in the response? Is one node allowed or none at all?
+
 ## 1. Overview
 > [!NOTE]
 > not applicable

@@ -33,6 +33,9 @@ Definitions:
 * a _focus node_ is a subject from which all the quads of a member can be retrieved and extracted (by the [member extraction algorithm](https://treecg.github.io/specification/#member-extraction-algorithm)) -- see also [here](https://w3c.github.io/data-shapes/shacl/#focusNodes)
 
 ### Page Requirements (TPPR)
+> [!IMPORTANT]
+> * rename root node vs subsequent node
+
 1. ***the Web API MUST use HTTP(S) as its protocol***
 2. ***every page MUST contain linked data in a (commonly used) [RDF serialization format](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)***
 3. ***every page MUST be directly or indirectly (by redirection) the result of a API request for a node***
@@ -64,7 +67,7 @@ Definitions:
 29. a `hydra:IriTemplate` MAY refer to a page using its `hydra:template` property and use its `hydra:mapping` to a `hydra:IriTemplateMapping`, which for its `hydra:property` uses `tree:timeQuery` and a `tree:path` property (path) is added referring to a member property, so that members can be found for which the property matches the given time-query value
 
 ### Collection Requirements (TPCR)
-1. **a collection MUST refer using its `tree:member` property to a member's focus node for all (zero or more) members available in the page**
+1. **a collection MUST refer using its `tree:member` property to a member's focus node, which is a blank or named node, for all (zero or more) members available in the page**
 2. **a collection MUST be identified using a named node (and not a blank node)**
 3. **a collection MAY refer using its `tree:shape` property to one [node shape](https://w3c.github.io/data-shapes/shacl/#node-shapes)**
 4. if a collection has a node shape, it MUST have a SHACL [shape target](https://w3c.github.io/data-shapes/shacl/#targets) that targets all members of the collection, i.e. all members adhere to that SHACL shape
