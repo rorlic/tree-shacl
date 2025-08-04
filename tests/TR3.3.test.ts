@@ -4,7 +4,7 @@ import {
   createValidator, 
 } from './utilities';
 
-describe('Test TR3.3 (tree:view in non-root)', async () => {
+describe('Test TR3.3 (tree:view in subsequent node)', async () => {
   const validator = await createValidator(['tree-common.ttl','TR3.3-tree-view-in-subsequent.ttl']);
   const viewRecommendedShape = 'https://w3id.org/tree#CollectionViewSuggestedShape';
   const viewLimitedShape = 'https://w3id.org/tree#CollectionViewLimitedShape';

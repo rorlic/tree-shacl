@@ -3,7 +3,7 @@ import {
   expectViolation, ExpectedResult, expectNoViolation, validateFile, createValidator, 
 } from './utilities';
 
-describe('Test TR3.1 (tree:view in collection)', async () => {
+describe('Test TR3.1 (tree:view in collection node)', async () => {
   const validator = await createValidator(['tree-common.ttl','TR3.1-tree-view-in-collection.ttl']);
   const nodeShape = 'https://w3id.org/tree#CollectionViewsRequiredShape';
   const treeView = 'https://w3id.org/tree#view';
