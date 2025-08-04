@@ -11,7 +11,9 @@ cd ..
 rm -rf ./temp/*
 cd ./src
 riot --quiet --formatted turtle $(tr '\n' ' ' < shapes-common.txt) > ../temp/tree-common-shapes.ttl
-riot --quiet --formatted turtle $(tr '\n' ' ' < shapes-root-node.txt) > ../temp/tree-root-node-shapes.ttl
+riot --quiet --formatted turtle $(tr '\n' ' ' < shapes-node-collection.txt) > ../temp/tree-collection-node-shapes.ttl
+riot --quiet --formatted turtle $(tr '\n' ' ' < shapes-node-root.txt) > ../temp/tree-root-node-shapes.ttl
+riot --quiet --formatted turtle $(tr '\n' ' ' < shapes-node-subsequent.txt) > ../temp/tree-subsequent-node-shapes.ttl
 riot --quiet --formatted turtle $(tr '\n' ' ' < shapes-structure.txt) > ../temp/tree-structure-shapes.ttl
 cd ../temp
 zip ../dist/tree-shapes.zip *

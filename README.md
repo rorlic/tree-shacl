@@ -1,4 +1,7 @@
 # TREE specification SHACL
+> [!WARNING]
+> this document is outdated and will be updated ASAP
+
 > This repository is still _work in progress_ and needs to be approved and accepted by the [TreeCG](https://github.com/treecg) community group, so use at your own risk.
 >
 > Currently the shapes cover only the requirements in **bold** (that is, the part that can be validates with shapes).
@@ -7,10 +10,12 @@ In order to be compliant with the [TREE hypermedia specification](https://treecg
 
 This repository contains a number of [SHACL](https://www.w3.org/TR/shacl/) shapes that can be used to validate that the pages of a web API are compliant to the TREE specification. The shapes help to validate a set of requirements that have been extracted from the TREE specification as it currently stands (Draft Community Group Report, 20 March 2025).
 
-The shapes can be found in the [src](./src/) directory and are split into 3 files:
-* the [common shapes](./src/tree-common-shapes.ttl) file contains common shapes to validate pages of a TREE web API.
-* the [root node shapes](./src/tree-root-node-shapes.ttl) file contains additional shapes needed to validate the first (root) page.
-* the [structure shapes](./src/tree-structure-shapes.ttl) file contains shapes to validate the structure of the TREE itself and needs to happen on the union of a collection of TREE nodes as opposed to a TREE node on its own.
+> TODO: rephrase this as the shapes files do not exists as-is anymore but are generated at release time
+>
+> The shapes can be found in the [src](./src/) directory and are split into 3 files:
+> * the [common shapes](./src/tree-common-shapes.ttl) file contains common shapes to validate pages of a TREE web API.
+> * the [root node shapes](./src/tree-root-node-shapes.ttl) file contains additional shapes needed to validate the first (root) page.
+> * the [structure shapes](./src/tree-structure-shapes.ttl) file contains shapes to validate the structure of the TREE itself and needs to happen on the union of a collection of TREE nodes as opposed to a TREE node on its own.
 
 This repository also contains a set of unit tests that check the correctness of the above shape files. To run the tests you need to install the required packages:
 ```bash
