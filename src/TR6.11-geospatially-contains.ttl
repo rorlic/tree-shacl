@@ -14,4 +14,4 @@ tree:GeospatiallyContainsValueKindShape a sh:PropertyShape ;
  sh:datatype geo:wktLiteral;
  sh:name "Relation value";
  sh:description "The contextual value of this node: may contain e.g., a WKT-string with the bound of a rectangle, may contain a string, an integer, or even link to another resource where clear comparison rules apply.";
- sh:message "TPPR-24 (geospatially contains) - a specific relation of type `tree:GeospatiallyContainsRelation` MUST include a `tree:value` property to specify a WKT literal, which defines a geospatial region that, for all the members that can be found by following the link, geospatially contains the spatial object defined by the member's WKT literal value" .
+ sh:message "TR6.11 - A geospatial constrained relation MUST refer to a WKT literal value using its tree:value property" .
