@@ -19,4 +19,4 @@ tree:RelationValueRequiredShape a sh:PropertyShape ;
  sh:nodeKind sh:IRIOrLiteral;
  sh:name "Relation value";
  sh:description "The contextual value of this node: may contain e.g., a WKT-string with the bound of a rectangle, may contain a string, an integer, or even link to another resource where clear comparison rules apply.";
- sh:message "TPPR-14 (tree:value usage) - a specific relation MUST refer using its tree:value property to the (literal or URI) value used for comparing with a member's value found by its tree:path property" .
+ sh:message "TR6.3 - A constrained relation MUST refer to a literal value using its tree:value property, which gives the RHS (right hand side) value of the constraint" .
