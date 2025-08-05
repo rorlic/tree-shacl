@@ -34,6 +34,6 @@ npm test
 ## Create Release
 To build the combined shapes files (see [deliverables](#deliverables)), you can run the [build script](./build/create-release.sh) from the root of the repository using:
 ```bash
-./create-release.sh
+./build/create-release.sh
 ```
 This will first create a [temporary](./temp/) directory and a [distribution](./dist/) directory. After that it creates a zip archive containing the individual requirement shape files to allow creating custom combined shapes files as well as a zip file containing the set of standard combined shapes files. You can find both archives in the [distribution](./dist/) directory.
