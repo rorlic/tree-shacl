@@ -12,7 +12,7 @@ tree:CollectionViewSuggestedShape a sh:PropertyShape;
   sh:name "Tree view";
   sh:description "Links the collection to the current tree:Node";
   sh:severity sh:Info;
-  sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MAY refer using its tree:view property to this tree:Node" .
+  sh:message "TR3.3 - In a subsequent page response, a collection SHOULD refer to the current page URL using its tree:view property" .
 
 tree:CollectionViewLimitedShape a sh:PropertyShape;
   sh:path tree:view;
@@ -20,11 +20,11 @@ tree:CollectionViewLimitedShape a sh:PropertyShape;
   sh:maxCount 1;
   sh:name "Tree view";
   sh:description "Links the collection to the current tree:Node";
-  sh:message "TPPR-07 (tree:view in non-root) - in a non-root page, a collection MUST NOT refer using its tree:view property to multiple tree:Node" .
+  sh:message "TR3.3 - In a subsequent page response, a collection SHOULD refer to the current page URL using its tree:view property" .
 
 tree:CollectionViewCurrentNodeShape a sh:PropertyShape;
   sh:path (tree:view rdf:type);
   sh:hasValue tree:Node;
   sh:name "Tree view";
   sh:description "Links the collection to the current tree:Node";
-  sh:message "TR3.2 - In a root page response, a collection MUST refer to the current page URL using its tree:view property" .
+  sh:message "TR3.3 - In a subsequent page response, a collection SHOULD refer to the current page URL using its tree:view property" .

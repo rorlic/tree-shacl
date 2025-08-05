@@ -2,11 +2,11 @@ tree-common.ttl
 
 TR4.1-tree-member-count.ttl
 TR4.2-tree-member-focus-node.ttl
+TR5.5-tree-relation-usage.ttl
+TR5.6-tree-node-usage.ttl
 
 tree-TPPR-04-contains-tree-Node.ttl
 tree-TPPR-05-contains-tree-Collection.ttl
-tree-TPPR-11-tree-relation-usage.ttl
-tree-TPPR-12-tree-node-usage.ttl
 tree-TPPR-13-tree-path-usage.ttl
 tree-TPPR-14-tree-value-usage.ttl
 tree-TPPR-24-geospatially-contains.ttl

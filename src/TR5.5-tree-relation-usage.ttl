@@ -9,4 +9,4 @@ tree:NodeRelationTypeShape a sh:PropertyShape;
   sh:nodeKind sh:BlankNodeOrIRI;
   sh:name "Tree relation";
   sh:description "Links a node to a relation";
-  sh:message "TPPR-11 (tree:relation usage) - for every page that can be navigated to, a tree:Node MUST refer using a tree:relation property to a tree:Relation or sub-class thereof" .
+  sh:message "TR5.5 - A node MUST refer to each related page using a tree:relation property, which is a relation entity (tree:Relation or one of its subclasses)" .

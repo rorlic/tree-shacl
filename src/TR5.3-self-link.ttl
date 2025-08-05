@@ -13,4 +13,4 @@ tree:NodeSelfLinkShape a sh:NodeShape ;
   rdfs:label "Self link shape"@en ;
   rdfs:comment "A shape describing TREE nodes cannot contain links to themselves."@en ;
   sh:name "tree:Node self link";
-  sh:message "TPPR-10 (self link) - a page MUST NOT contain a link to itself" .
+  sh:message "TR-5.3 - A node MUST NOT link to itself" .
