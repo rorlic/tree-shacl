@@ -18,4 +18,4 @@ tree:RelationPathRequiredShape a sh:PropertyShape ;
  sh:maxCount 1;
  sh:name "Relation path";
  sh:description "A property path, as defined by SHACL, that indicates what resource the tree:value affects.";
- sh:message "TPPR-13 (tree:path usage) - a relation subclass instance MUST include a tree:path property to specify a property path that defines how to find a member's value for comparison with its tree:value property" .
+ sh:message "TR6.2 - A constrained relation MUST refer to a property path using its tree:path property, which indicates to what member property the constraint applies and gives the LHS (left hand side) of the constraint" .
