@@ -9,4 +9,4 @@ tree:CollectionTypeNodeKindShape a sh:PropertyShape;
   sh:nodeKind sh:IRI;
   sh:name "tree:Collection identity";
   sh:description "A shape to validate that a tree:Collection is identified by a named node IRI.";
-  sh:message "TPCR-02 (tree:Collection IRI) - a collection MUST be identified using a named node (and not a blank node)" .
+  sh:message "TR3.4 - A collection MUST be identified using an IRI so it can be dereferenced" .
