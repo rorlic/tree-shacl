@@ -1,0 +1,3 @@
+TR5.3-self-link.ttl
+TR5.4-incoming-links.ttl
+TR8.2-outgoing-links.ttl

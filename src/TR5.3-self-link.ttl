@@ -1,0 +1,16 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+tree:NodeSelfLinkShape a sh:NodeShape ;
+  sh:targetClass tree:Relation ;
+  sh:not [ a sh:PropertyShape;
+    sh:path [sh:inversePath tree:relation];
+    sh:equals tree:node ;
+    sh:name "tree:Node self links";
+    sh:description "Shape validating that no node links to itself (directly), i.e. (foreach ?d only one ?o exists in: ?o tree:relation/tree:node ?d)."
+  ] ;
+  rdfs:label "Self link shape"@en ;
+  rdfs:comment "A shape describing TREE nodes cannot contain links to themselves."@en ;
+  sh:name "tree:Node self link";
+  sh:message "TR-5.3 - A node MUST NOT link to itself" .

@@ -1,0 +1,19 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+tree:NodeTypeShape a sh:NodeShape;
+  sh:targetNode tree:Node ;
+  rdfs:label "Node shape"@en ;
+  rdfs:comment "A shape ensuring that a TREE node appears only once in a well-formed TREE page."@en ;
+  sh:property tree:NodeTypeRequiredShape .
+
+tree:NodeTypeRequiredShape a sh:PropertyShape;
+  sh:path [ sh:inversePath rdf:type ] ;
+  sh:minCount 1; 
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI ;
+  sh:name "tree:Node count";
+  sh:description "A shape to validate that a tree:Node only appears once in a TREE page.";
+  sh:message "TR3.6 - A root or subsequent page response can contain only one node (a tree:Node)" .

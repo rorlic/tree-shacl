@@ -1,0 +1,42 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+tree:CollectionClassShape sh:property tree:CollectionShapeSuggestedShape, tree:CollectionShapeLimitedShape, tree:CollectionShapeNodeKindShape .
+
+tree:CollectionShapeSuggestedShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:minCount 1;
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:severity sh:Info;
+  sh:message "TR8.1 - A collection MUST refer to one SHACL shape using its tree:shape property" .
+
+tree:CollectionShapeLimitedShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:maxCount 1;
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:message "TR8.1 - A collection MUST refer to one SHACL shape using its tree:shape property" .
+
+tree:CollectionShapeNodeKindShape a sh:PropertyShape;
+  sh:path tree:shape;
+  sh:or ([
+    sh:class sh:NodeShape
+  ] [
+    sh:node [ 
+      a sh:NodeShape; 
+      rdfs:label "NodeShape shape"@en ;
+      rdfs:comment "A shape describing SHACL shapes defined without a sh:NodeShape class."@en ;
+      sh:property [
+        sh:path sh:path;
+        sh:maxCount 0;
+        sh:name "SHACL Property Path";
+        sh:description "Property shapes specify constraints that need to be met with respect to nodes that can be reached from the focus node either by directly following a given property (specified as an IRI) or any other SHACL property path, specified using sh:path.";
+        sh:message "A node shape is a shape in the shapes graph that is not the subject of a triple with sh:path as its predicate. It is recommended, but not required, for a node shape to be declared as a SHACL instance of sh:NodeShape. SHACL instances of sh:NodeShape cannot have a value for the property sh:path."
+      ]
+    ]
+  ]);
+  sh:name "Tree (shacl) shape";
+  sh:description "The SHACL shape the members of the collection adhere to";
+  sh:message "TR8.1 - A collection MUST refer to one SHACL shape using its tree:shape property" .
