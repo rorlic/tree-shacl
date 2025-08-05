@@ -1,7 +1,6 @@
 tree-common.ttl
 TR3.4-tree-Collection-IRI.ttl
 TR3.5-contains-tree-Collection.ttl
-TR3.6-contains-tree-Node.ttl
 TR4.1-tree-member-count.ttl
 TR4.2-tree-member-focus-node.ttl
 TR5.5-tree-relation-usage.ttl
