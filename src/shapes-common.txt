@@ -1,5 +1,7 @@
 tree-common.ttl
 
+TR3.4-tree-Collection-IRI.ttl
+TR3.5-contains-tree-Collection.ttl
 TR4.1-tree-member-count.ttl
 TR4.2-tree-member-focus-node.ttl
 TR5.5-tree-relation-usage.ttl
@@ -10,6 +12,3 @@ TR6.11-geospatially-contains.ttl
 TR8.1-tree-shape-usage.ttl
 
 tree-TPPR-04-contains-tree-Node.ttl
-tree-TPPR-05-contains-tree-Collection.ttl
-
-tree-TPCR-02-tree-Collection-IRI.ttl
