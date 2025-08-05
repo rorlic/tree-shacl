@@ -4,6 +4,7 @@ TR4.1-tree-member-count.ttl
 TR4.2-tree-member-focus-node.ttl
 TR5.5-tree-relation-usage.ttl
 TR5.6-tree-node-usage.ttl
+TR8.1-tree-shape-usage.ttl
 
 tree-TPPR-04-contains-tree-Node.ttl
 tree-TPPR-05-contains-tree-Collection.ttl
@@ -12,4 +13,3 @@ tree-TPPR-14-tree-value-usage.ttl
 tree-TPPR-24-geospatially-contains.ttl
 
 tree-TPCR-02-tree-Collection-IRI.ttl
-tree-TPCR-03-tree-shape-usage.ttl
