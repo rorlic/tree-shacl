@@ -10,4 +10,4 @@ tree:CollectionTypeRequiredShape a sh:PropertyShape;
   sh:maxCount 1 ;
   sh:name "tree:Collection count";
   sh:description "Shape validating that only one tree:Collection exists in a TREE page."; 
-  sh:message "TPPR-05 (contains tree:Collection) - a page MUST contain exactly one tree:Collection" .
+  sh:message "TR3.5 - A response can contain only one collection (a tree:Collection)" .

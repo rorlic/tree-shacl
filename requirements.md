@@ -46,6 +46,7 @@ This document is based on [The TREE hypermedia specification, Draft Community Gr
 0. In a root page response, a collection MUST refer to the current page URL using its `tree:view` property
 0. In a subsequent page response, a collection SHOULD refer to the current page URL using its `tree:view` property
 0. A collection MUST be identified using an IRI so it can be dereferenced
+0. A response can contain only one collection (`a tree:Collection`)
 
 ## 4. The member extraction algorithm
 1. A collection SHOULD contain one or more members
