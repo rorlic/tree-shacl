@@ -10,14 +10,14 @@ tree:CollectionShapeSuggestedShape a sh:PropertyShape;
   sh:name "Tree (shacl) shape";
   sh:description "The SHACL shape the members of the collection adhere to";
   sh:severity sh:Info;
-  sh:message "TPCR-03 (tree:shape usage) - a collection MAY refer using its tree:shape property to one node shape" .
+  sh:message "TR8.1 - A collection MUST refer to one SHACL shape using its tree:shape property" .
 
 tree:CollectionShapeLimitedShape a sh:PropertyShape;
   sh:path tree:shape;
   sh:maxCount 1;
   sh:name "Tree (shacl) shape";
   sh:description "The SHACL shape the members of the collection adhere to";
-  sh:message "TPCR-03 (tree:shape usage) - a collection MUST NOT refer using its tree:shape property to more than one node shape" .
+  sh:message "TR8.1 - A collection MUST refer to one SHACL shape using its tree:shape property" .
 
 tree:CollectionShapeNodeKindShape a sh:PropertyShape;
   sh:path tree:shape;
@@ -39,4 +39,4 @@ tree:CollectionShapeNodeKindShape a sh:PropertyShape;
   ]);
   sh:name "Tree (shacl) shape";
   sh:description "The SHACL shape the members of the collection adhere to";
-  sh:message "TPCR-03 (tree:shape usage) - a collection MUST NOT refer using its tree:shape property to an invalid node shape" .
+  sh:message "TR8.1 - A collection MUST refer to one SHACL shape using its tree:shape property" .
