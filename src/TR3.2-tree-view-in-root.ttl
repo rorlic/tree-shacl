@@ -2,18 +2,19 @@
 @prefix sh:  <http://www.w3.org/ns/shacl#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-tree:CollectionClassShape sh:and 
-  (tree:CollectionViewRequiredShape tree:CollectionViewCurrentNodeShape ) ;
+tree:CollectionHasViewShape 
+  sh:targetClass tree:Collection;
   sh:name "Tree view";
   sh:description "Links the collection to the current tree:Node";
-  sh:message "TR3.2 - In a root page response, a collection MUST refer to the current page URL using its tree:view property" .
+  sh:message "TR3.2 - In a root page response, a collection MUST refer to the current page URL using its tree:view property" ;
+  sh:and (tree:CollectionViewRequiredShape tree:CollectionViewCurrentNodeShape ) .
 
 tree:CollectionViewRequiredShape a sh:PropertyShape;
   sh:path tree:view;
   sh:node tree:NodeClassShape;
   sh:minCount 1; 
-  sh:maxCount 1.
+  sh:maxCount 1 .
 
 tree:CollectionViewCurrentNodeShape a sh:PropertyShape;
   sh:path (tree:view rdf:type);
-  sh:hasValue tree:Node.
+  sh:hasValue tree:Node .
