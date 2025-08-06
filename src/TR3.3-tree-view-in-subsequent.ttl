@@ -11,7 +11,7 @@ tree:CollectionViewSuggestedShape a sh:PropertyShape;
   sh:minCount 1;
   sh:name "Tree view";
   sh:description "Links the collection to the current tree:Node";
-  sh:severity sh:Info;
+  sh:severity sh:Warning;
   sh:message "TR3.3 - In a subsequent page response, a collection SHOULD refer to the current page URL using its tree:view property" .
 
 tree:CollectionViewLimitedShape a sh:PropertyShape;

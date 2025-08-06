@@ -9,4 +9,4 @@ tree:CollectionMemberSuggestedShape a sh:PropertyShape;
   sh:name "Tree member";
   sh:description "Links to the collection’s items that are the sh:targetNodes of the SHACL shape defined with tree:shape";
   sh:severity sh:Info;
-  sh:message "TR4.1 - A collection SHOULD contain one or more members" .
+  sh:message "TR4.1 - A collection MAY contain one or more members" .

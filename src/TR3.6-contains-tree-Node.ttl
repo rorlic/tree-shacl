@@ -16,4 +16,4 @@ tree:NodeTypeRequiredShape a sh:PropertyShape;
   sh:nodeKind sh:IRI ;
   sh:name "tree:Node count";
   sh:description "A shape to validate that a tree:Node only appears once in a TREE page.";
-  sh:message "TR3.6 - A root or subsequent page response can contain only one node (a tree:Node)" .
+  sh:message "TR3.6 - A root or subsequent page response MUST contain one node (a tree:Node)" .

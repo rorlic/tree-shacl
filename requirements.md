@@ -46,11 +46,11 @@ This document is based on [The TREE hypermedia specification, Draft Community Gr
 0. In a root page response, a collection MUST refer to the current page URL using its `tree:view` property
 0. In a subsequent page response, a collection SHOULD refer to the current page URL using its `tree:view` property
 0. A collection MUST be identified using an IRI so it can be dereferenced
-0. A response can contain only one collection (`a tree:Collection`)
-0. A root or subsequent page response can contain only one node (`a tree:Node`)
+0. A response MUST contain one collection (`a tree:Collection`)
+0. A root or subsequent page response MUST contain one node (`a tree:Node`)
 
 ## 4. The member extraction algorithm
-1. A collection SHOULD contain one or more members
+1. A collection MAy contain one or more members
 0. A collection MUST refer to each member's root focus node using a `tree:member` property[^2]
 
 ## 5. Traversing the search tree
@@ -95,7 +95,7 @@ This document is based on [The TREE hypermedia specification, Draft Community Gr
 ## 8.1 Classes
 
 ### 8.1.1 tree:Collection
-1. A collection MUST refer to one SHACL shape[^7] using its `tree:shape` property
+1. A collection SHOULD refer to a SHACL shape[^7] using its `tree:shape` property
 
 ### 8.1.2 tree:Node
 2. A node MAY contain one or more relations
