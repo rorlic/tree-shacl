@@ -1,6 +1,6 @@
 import { it, describe } from 'vitest';
 import { 
-  expectViolation, ExpectedResult, expectNoViolation, validateFile, expectInfo, 
+  expectViolation, ExpectedResult, expectNoViolation, validateFile, expectWarning, 
   expectNoInfo, createValidator,
 } from './utilities';
 
@@ -13,7 +13,7 @@ describe('Test TR8.1 (tree:shape usage)', async () => {
   const exampleCollection = 'http://example.org/Collection1';
 
   it('may have zero tree:shape predicates', async () => {
-    expectInfo({ sourceShape: suggestedShape, path: treeShape, focusNode: exampleCollection } as ExpectedResult, 
+    expectWarning({ sourceShape: suggestedShape, path: treeShape, focusNode: exampleCollection } as ExpectedResult, 
       await validateFile('./tests/TR8.1/no-tree-shape.ttl', validator));
   });
 
