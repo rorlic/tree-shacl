@@ -1,7 +1,7 @@
 import { it, describe } from 'vitest';
 import { 
   expectViolation, ExpectedResult, validateFile,
-  createValidator, 
+  createValidator, expectNoViolation,
 } from './utilities';
 
 describe('Test TR-5.3 (no self link)', async () => {
@@ -11,5 +11,10 @@ describe('Test TR-5.3 (no self link)', async () => {
   it('should not have a link to itself', async () => {
     expectViolation({ sourceShape: viewShape } as ExpectedResult,
       await validateFile('./tests/TR5.3/self-link.ttl', validator));
+  });
+
+  it('should allow no self-link', async () => {
+    expectNoViolation(viewShape,
+      await validateFile('./tests/TR5.3/no-self-link.ttl', validator));
   });
 });
