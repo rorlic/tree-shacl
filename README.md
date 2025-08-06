@@ -9,11 +9,10 @@ In order to be compliant with the [TREE hypermedia specification](https://treecg
 This repository contains a number of [SHACL](https://www.w3.org/TR/shacl/) shapes that can be used to validate that the pages of a web API are compliant to the TREE specification. The shapes help to validate a set of [requirements](./requirements.md) that have been extracted from the TREE specification as it currently stands (Draft Community Group Report, 20 June 2025).
 
 ## Deliverables
-The shapes can be found in the [src](./src/) directory and are split into a [common shapes](./src/tree-common-shapes.ttl) file and a file per requirement. Each requirement shape file has its own test and collection of test files and can be found in the [tests](./tests/) directory. There is also a [build](./build/) directory that contains a build script and some support text files to create the following combined shape files (which only exist after creating a build using the [script](./build/create-release.sh)):
-* the [common shapes](./temp/tree-common-shapes.ttl) file contains common shapes to validate any response of a TREE web API
-* the [collection shapes](./temp/tree-collection-node-shapes.ttl) file contains additional shapes needed to validate a collection response
-* the [root node shapes](./temp/tree-root-node-shapes.ttl) file contains additional shapes needed to validate a root page response
-* the [subsequent node shapes](./temp/tree-subsequent-node-shapes.ttl) file contains additional shapes needed to validate a subsequent page response
+The shapes can be found in the [src](./src/) directory and are split into a [common shapes](./src/tree-common.ttl) file and a file per requirement. Each requirement shape file has its own test and collection of test files and can be found in the [tests](./tests/) directory. There is also a [build](./build/) directory that contains a build script and some support text files to create the following combined shape files (which only exist after creating a build using the [script](./build/create-release.sh)):
+* the [root node shapes](./temp/tree-root-node-shapes.ttl) file contains shapes needed to validate a root page response
+* the [subsequent node shapes](./temp/tree-subsequent-node-shapes.ttl) file contains shapes needed to validate a subsequent page response
+* the [collection shapes](./temp/tree-collection-node-shapes.ttl) file contains shapes needed to validate a collection response
 * the [structure shapes](./temp/tree-structure-shapes.ttl) file contains shapes to validate the structure of the TREE itself
 
 > [!TIP]
