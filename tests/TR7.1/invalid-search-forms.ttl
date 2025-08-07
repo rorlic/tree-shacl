@@ -1,0 +1,10 @@
+@prefix tree:  <https://w3id.org/tree#> .
+@prefix ex:    <http://example.org/> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Collection1 a tree:Collection;
+  tree:view ex:node1 .
+
+ex:Node1 a tree:Node ;
+  tree:search [ a ex:invalid ], "invalid", 0, "2025-08-07T10:45:00Z"^^xsd:dateTime .

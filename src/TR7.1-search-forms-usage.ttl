@@ -1,0 +1,21 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+
+tree:NodeClassShape sh:property tree:NodeSearchFormSuggestedShape, tree:NodeSearchFormInvalidShape.
+
+tree:NodeSearchFormSuggestedShape a sh:PropertyShape;
+  sh:path tree:search;
+  sh:minCount 1; 
+  sh:severity sh:Info;
+  sh:name "Node search form";
+  sh:description "Links a tree:Node to a hydra:IriTemplate. The search form will search the remaining items of the node.";
+  sh:message "TR7.1 - A node MAY refer to one or more search forms using a tree:search property" .
+
+tree:NodeSearchFormInvalidShape a sh:PropertyShape;
+  sh:path tree:search;
+  sh:datatype hydra:IriTemplate ;
+  sh:name "Node search form";
+  sh:description "Links a tree:Node to a hydra:IriTemplate. The search form will search the remaining items of the node.";
+  sh:message "TR7.1 - A node MAY refer to one or more search forms using a tree:search property" .

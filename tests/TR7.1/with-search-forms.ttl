@@ -1,0 +1,9 @@
+@prefix tree:  <https://w3id.org/tree#> .
+@prefix ex:    <http://example.org/> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+
+ex:Collection1 a tree:Collection;
+  tree:view ex:node1 .
+
+ex:Node1 a tree:Node ;
+  tree:search [ a hydra:IriTemplate ] .
