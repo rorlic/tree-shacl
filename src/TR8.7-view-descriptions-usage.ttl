@@ -1,0 +1,20 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+tree:NodeClassShape sh:property tree:NodeViewDescriptionSuggestedShape, tree:NodeViewDescriptionInvalidShape.
+
+tree:NodeViewDescriptionSuggestedShape a sh:PropertyShape;
+  sh:path tree:viewDescription;
+  sh:minCount 1; 
+  sh:severity sh:Info;
+  sh:name "Node view description";
+  sh:description "Links together any HTTP response with a view description on which things like retention policies, contact information of a server, etc. can be found.";
+  sh:message "TR8.7 - A node MAY refer to one or more view descriptions using a tree:viewDescription property, which all MUST be interpreted together (combined)" .
+
+tree:NodeViewDescriptionInvalidShape a sh:PropertyShape;
+  sh:path tree:viewDescription;
+  sh:nodeKind sh:BlankNodeOrIRI ;
+  sh:name "Node view description";
+  sh:description "Links together any HTTP response with a view description on which things like retention policies, contact information of a server, etc. can be found.";
+  sh:message "TR8.7 - A node MAY refer to one or more view descriptions using a tree:viewDescription property, which all MUST be interpreted together (combined)" .
