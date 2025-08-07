@@ -10,7 +10,7 @@ tree:RelationRemainingItemsSuggestedShape a sh:PropertyShape;
   sh:severity sh:Info;
   sh:name "Relation remainingItems";
   sh:description "Remaining number of items of this node, the items in its children included";
-  sh:message "TR3.7 - A relation MAY indicate the total number of members that can be found by following its page link (and all the page relations recursively) using its tree:remainingItems property" .
+  sh:message "TR5.7 - A relation MAY indicate the total number of members that can be found by following its page link (and all the page relations recursively) using its tree:remainingItems property" .
 
 tree:RelationRemainingItemsInvalidShape a sh:PropertyShape;
   sh:path tree:remainingItems;
@@ -18,4 +18,4 @@ tree:RelationRemainingItemsInvalidShape a sh:PropertyShape;
   sh:datatype xsd:integer ;
   sh:name "Relation remainingItems";
   sh:description "Remaining number of items of this node, the items in its children included";
-  sh:message "TR3.7 - A relation MAY indicate the total number of members that can be found by following its page link (and all the page relations recursively) using its tree:remainingItems property" .
+  sh:message "TR5.7 - A relation MAY indicate the total number of members that can be found by following its page link (and all the page relations recursively) using its tree:remainingItems property" .
