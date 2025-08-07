@@ -1,0 +1,21 @@
+@prefix tree: <https://w3id.org/tree#>.
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+tree:RelationClassShape sh:property tree:RelationRemainingItemsSuggestedShape, tree:RelationRemainingItemsInvalidShape.
+
+tree:RelationRemainingItemsSuggestedShape a sh:PropertyShape;
+  sh:path tree:remainingItems;
+  sh:minCount 1; 
+  sh:severity sh:Info;
+  sh:name "Relation remainingItems";
+  sh:description "Remaining number of items of this node, the items in its children included";
+  sh:message "TR3.7 - A relation MAY indicate the total number of members that can be found by following its page link (and all the page relations recursively) using its tree:remainingItems property" .
+
+tree:RelationRemainingItemsInvalidShape a sh:PropertyShape;
+  sh:path tree:remainingItems;
+  sh:maxCount 1; 
+  sh:datatype xsd:integer ;
+  sh:name "Relation remainingItems";
+  sh:description "Remaining number of items of this node, the items in its children included";
+  sh:message "TR3.7 - A relation MAY indicate the total number of members that can be found by following its page link (and all the page relations recursively) using its tree:remainingItems property" .
