@@ -67,7 +67,7 @@ This document is based on [The TREE hypermedia specification, Draft Community Gr
 0. A constrained relation MUST refer to a property path using its `tree:path` property, which indicates to what member property the constraint applies and gives the LHS (left hand side) of the constraint
 0. A constrained relation MUST refer to a literal value using its `tree:value` property, which gives the RHS (right hand side) value of the constraint
 0. Multiple constrained relations to the same node MUST only link to members for which all these constraints apply (i.e. logical AND)[^4]
-0. A constrained relation whose `tree:path` results in multiple values MUST link to members for which at least one of these values match the constraint (i.e. logical OR)[^5]
+0. A constrained relation whose `tree:path` results in multiple values MUST link to members for which at least one of these values matches the constraint (i.e. logical OR)[^5]
 
 ### 6.1 Comparing strings, IRIs and time literals
 6. A non-geospatial constrained relation MUST only link to members for which the constraint matches as defined in the [SPARQL algebra functions](https://www.w3.org/TR/sparql11-query/#expressions)
@@ -84,11 +84,11 @@ This document is based on [The TREE hypermedia specification, Draft Community Gr
 1. A node MAY refer to one or more search forms using a `tree:search` property
 
 ### 7.1. Geospatial XYZ tiles search form
-2. A search form for creating a geospatial page link MUST specify a `tree:longitudeTile` (X tile), a `tree:latitudeTile` (Y tile) and a `tree:zoom` (zoom level), which all expect positive integers (`xsd:integer`) when filled in
+2. A search form for creating a geospatial page link MUST specify a `tree:longitudeTile` (X tile), a `tree:latitudeTile` (Y tile) and a `tree:zoom` (zoom level), all expecting positive integers (`xsd:integer`) as values
 
 ### 7.2. Searching through a list of objects ordered by time
-3. A search form for creating a time-based page link MUST specify a `tree:timeQuery`, which expects a timestamp (`xsd:dateTime`) when filled in
-0. A search form for creating a time-based page link MUST specify a `tree:path`, which specifies the predicate path that is used to find an alternative page (if the requested page link does not exist) that contains one or more members with their predicate path value matching the given timestamp
+3. A search form for creating a time-based page link MUST specify a `tree:timeQuery` of type timestamp (`xsd:dateTime`)
+0. A search form for creating a time-based page link MUST specify a `tree:path`, which - if the requested page link does not exist - specifies the predicate path that is used to find an alternative page that contains one or more members with their predicate path value matching the given timestamp
 
 ## 8. Vocabulary
 
