@@ -5,6 +5,7 @@ TR4.1-tree-member-count.ttl
 TR4.2-tree-member-focus-node.ttl
 TR5.5-tree-relation-usage.ttl
 TR5.6-tree-node-usage.ttl
+TR5.7-tree-remainingItems-usage.ttl
 TR6.2-tree-path-usage.ttl
 TR6.3-tree-value-usage.ttl
 TR6.11-geospatially-contains.ttl

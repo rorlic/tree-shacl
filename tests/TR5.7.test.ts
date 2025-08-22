@@ -4,7 +4,7 @@ import {
 } from './utilities';
 
 describe('Test TR5.7 (tree:remainingItems usage)', async () => {
-  const validator = await createValidator(['tree-common.ttl', 'TR5.7-remaining-items-usage.ttl']);
+  const validator = await createValidator(['tree-common.ttl', 'TR5.7-tree-remainingItems-usage.ttl']);
   const suggestedShape = 'https://w3id.org/tree#RelationRemainingItemsSuggestedShape';
   const invalidShape = 'https://w3id.org/tree#RelationRemainingItemsInvalidShape';
 
